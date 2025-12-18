@@ -24,7 +24,6 @@ export default function Portfolio() {
             href="/resume.pdf"
             download
             target="_blank"
-            rel="noopener noreferrer"
             className="inline-block mt-6 px-6 py-3 bg-yellow-400 text-black rounded-lg hover:bg-yellow-500 transition"
             >
             Download Resume
