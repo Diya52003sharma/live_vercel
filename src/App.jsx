@@ -18,12 +18,12 @@ const App=()=>
     <>
     {/* <Api/> */}
     {/* <Web/> */}
-    <Todo/>
+    {/* <Todo/> */}
 {/* <Product/>     */}
 {/* <Products/> */}
 {/* <Slider/> */}
 {/* <Productss/> */}
-{/* <Portfolio/> */}
+<Portfolio/>
 {/* <Ustate/> */}
 {/* <TestimonialSlider/> */}
 {/* <UseReducer/> */}
