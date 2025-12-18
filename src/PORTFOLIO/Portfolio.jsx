@@ -1,18 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 export default function Portfolio() {
+     const [open, setOpen] = useState(false);
   return (
     <div className="font-sans bg-gray-900 text-white">
       <nav className="w-full fixed top-0 left-0 bg-gradient-to-r from-indigo-900 via-pink-400 to-purple-600 shadow-lg z-50">
-        <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
-          <h1 className="text-2xl font-bold text-white">Diya Sharma</h1>
-          <div className="space-x-6 text-lg">
-            <a href="#home" className="hover:text-yellow-400 transition-colors">Home</a>
-            <a href="#skills" className="hover:text-yellow-400 transition-colors">Skills</a>
-            <a href="#projects" className="hover:text-yellow-400 transition-colors">Projects</a>
-            <a href="#contact" className="hover:text-yellow-400 transition-colors">Contact</a>
-          </div>
+      <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
+
+        {/* LOGO */}
+        <a href="#home" className="flex items-center gap-2">
+          <img
+            src="/logo.png"
+            alt="Logo"
+            className="w-10 h-10 object-contain"
+          />
+        </a>
+
+        {/* DESKTOP MENU */}
+        <div className="hidden md:flex space-x-6 text-lg">
+          <a href="#home" className="hover:text-yellow-400 transition">Home</a>
+          <a href="#skills" className="hover:text-yellow-400 transition">Skills</a>
+          <a href="#projects" className="hover:text-yellow-400 transition">Projects</a>
+          <a href="#contact" className="hover:text-yellow-400 transition">Contact</a>
         </div>
-      </nav>
+
+        {/* HAMBURGER */}
+        <button
+          className="md:hidden flex flex-col justify-between w-6 h-5"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle Menu"
+        >
+          <span className="block h-0.5 bg-white"></span>
+          <span className="block h-0.5 bg-white"></span>
+          <span className="block h-0.5 bg-white"></span>
+        </button>
+      </div>
+
+      {/* MOBILE MENU */}
+      {open && (
+        <div className="md:hidden bg-gradient-to-r from-indigo-900 via-pink-400 to-purple-600 px-6 pb-4">
+          <a onClick={() => setOpen(false)} href="#home" className="block py-2 hover:text-yellow-400">Home</a>
+          <a onClick={() => setOpen(false)} href="#skills" className="block py-2 hover:text-yellow-400">Skills</a>
+          <a onClick={() => setOpen(false)} href="#projects" className="block py-2 hover:text-yellow-400">Projects</a>
+          <a onClick={() => setOpen(false)} href="#contact" className="block py-2 hover:text-yellow-400">Contact</a>
+        </div>
+      )}
+    </nav>
 
      
       <section id="home" className=" flex items-center justify-center text-center px-6 pt-32 bg-gradient-to-br from-pink-400  to-indigo-900 animate-gradient-x">
