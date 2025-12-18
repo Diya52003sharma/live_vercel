@@ -23,7 +23,7 @@ const App=()=>
 {/* <Products/> */}
 {/* <Slider/> */}
 {/* <Productss/> */}
-<Portfolio/>
+{/* <Portfolio/> */}
 {/* <Ustate/> */}
 {/* <TestimonialSlider/> */}
 {/* <UseReducer/> */}
