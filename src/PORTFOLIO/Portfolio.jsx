@@ -78,7 +78,7 @@ export default function Portfolio() {
             <h3 className="text-2xl font-bold text-yellow-300">Hotel Website</h3>
             <p className="mt-3 text-gray-100">React-based grocery UI to manage items, add products, and track cart state.</p>
             <div className="mt-4 flex gap-4">
-              <a className="text-yellow-300 underline" href="#">Live</a>
+              <a className="text-yellow-300 underline" href="https://food-lime-six.vercel.app/">Live</a>
               <a className="text-yellow-300 underline" href="#">Code</a>
             </div>
           </div>
