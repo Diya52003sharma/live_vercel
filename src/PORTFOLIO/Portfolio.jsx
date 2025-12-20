@@ -1,161 +1,184 @@
 import React, { useState } from "react";
+
 export default function Portfolio() {
-     const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="font-sans bg-gray-900 text-white">
-      <nav className="w-full fixed top-0 left-0 bg-gradient-to-r from-indigo-900 via-pink-400 to-purple-600 shadow-lg z-50">
-      <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
+    <div className="font-sans bg-[#0b0f14] text-slate-200 scroll-smooth">
+      {/* ================= NAVBAR ================= */}
+      <nav className="fixed w-full top-0 left-0 bg-[#0b0f14]/90 backdrop-blur border-b border-slate-800 z-50">
+        <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
+          {/* LOGO */}
+          <a href="#home" className="flex flex-col">
+            <span className="text-2xl font-extrabold tracking-widest text-emerald-400">
+              FOCUS
+            </span>
+            <span className="text-xs text-slate-400">Build - Learn - Grow</span>
+          </a>
 
-        {/* LOGO */}
-        <a href="#home" className="flex items-center gap-2">
-          <img
-            src="/logo.png"
-            alt="Logo"
-            className="w-10 h-10 object-contain"
-          />
-        </a>
+          {/* DESKTOP MENU */}
+          <div className="hidden md:flex space-x-6 text-lg">
+            <a href="#home" className="hover:text-emerald-400">Home</a>
+            <a href="#skills" className="hover:text-emerald-400">Skills</a>
+            <a href="#projects" className="hover:text-emerald-400">Projects</a>
+            <a href="#contact" className="hover:text-emerald-400">Contact</a>
+          </div>
 
-        {/* DESKTOP MENU */}
-        <div className="hidden md:flex space-x-6 text-lg">
-          <a href="#home" className="hover:text-yellow-400 transition">Home</a>
-          <a href="#skills" className="hover:text-yellow-400 transition">Skills</a>
-          <a href="#projects" className="hover:text-yellow-400 transition">Projects</a>
-          <a href="#contact" className="hover:text-yellow-400 transition">Contact</a>
+          {/* HAMBURGER */}
+          <button
+            className="md:hidden flex flex-col justify-between w-6 h-5"
+            onClick={() => setOpen(!open)}
+          >
+            <span className="block h-0.5 bg-slate-300"></span>
+            <span className="block h-0.5 bg-slate-300"></span>
+            <span className="block h-0.5 bg-slate-300"></span>
+          </button>
         </div>
 
-        {/* HAMBURGER */}
-        <button
-          className="md:hidden flex flex-col justify-between w-6 h-5"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle Menu"
-        >
-          <span className="block h-0.5 bg-white"></span>
-          <span className="block h-0.5 bg-white"></span>
-          <span className="block h-0.5 bg-white"></span>
-        </button>
-      </div>
+        {/* MOBILE MENU */}
+        {open && (
+          <div className="md:hidden bg-[#0b0f14] px-6 pb-4">
+            <a href="#home" className="block py-2 hover:text-emerald-400">Home</a>
+            <a href="#skills" className="block py-2 hover:text-emerald-400">Skills</a>
+            <a href="#projects" className="block py-2 hover:text-emerald-400">Projects</a>
+            <a href="#contact" className="block py-2 hover:text-emerald-400">Contact</a>
+          </div>
+        )}
+      </nav>
 
-      {/* MOBILE MENU */}
-      {open && (
-        <div className="md:hidden bg-gradient-to-r from-indigo-900 via-pink-400 to-purple-600 px-6 pb-4">
-          <a onClick={() => setOpen(false)} href="#home" className="block py-2 hover:text-yellow-400">Home</a>
-          <a onClick={() => setOpen(false)} href="#skills" className="block py-2 hover:text-yellow-400">Skills</a>
-          <a onClick={() => setOpen(false)} href="#projects" className="block py-2 hover:text-yellow-400">Projects</a>
-          <a onClick={() => setOpen(false)} href="#contact" className="block py-2 hover:text-yellow-400">Contact</a>
-        </div>
-      )}
-    </nav>
-
-     
-      <section id="home" className=" flex items-center justify-center text-center px-6 pt-32 bg-gradient-to-br from-pink-400  to-indigo-900 animate-gradient-x">
+      {/* ================= HERO ================= */}
+      <section
+        id="home"
+        className="min-h-screen flex items-center justify-center text-center px-6 pt-28
+        bg-gradient-to-br from-[#0b0f14] via-[#0f172a] to-[#042f2e]"
+      >
         <div>
-          <h2 className="text-5xl md:text-6xl font-extrabold text-yellow-400 drop-shadow-lg animate-pulse">Hi, I'm Diya Sharma</h2>
-          <p className="text-xl mt-4 text-gray-300">Frontend Developer </p>
+          <h2 className="text-6xl md:text-6xl font-extrabold 
+            bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+            Hi, I'm Diya Sharma
+          </h2>
 
-                    <a
+          <p className="text-xl mt-4 text-slate-300">Frontend Developer</p>
+
+          <p className="mt-4 max-w-2xl mx-auto text-slate-400 leading-relaxed">
+            Frontend Developer focused on crafting clean, responsive, and visually
+            engaging web interfaces using modern technologies.
+          </p>
+
+          <a
             href="/resume.pdf"
             download
             target="_blank"
-            className="inline-block mt-6 px-6 py-3 bg-yellow-400 text-black rounded-lg hover:bg-yellow-500 transition"
-            >
+            className="inline-block mt-6 px-8 py-3 rounded-xl
+            bg-gradient-to-r from-emerald-500 to-cyan-500
+            text-black font-semibold hover:scale-105 transition"
+          >
             Download Resume
-            </a>
-
-                </div>
-
-          
-      </section>
-
-      {/* Skills */}
-     <section id="skills" className="py-20 bg-gray-800">
-    <h2 className="text-center text-4xl font-bold text-yellow-400 mb-10">Skills</h2>
-    <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-6 px-6">
-    <div className="p-6 bg-gradient-to-r from-pink-400 to-purple-700 rounded-xl shadow-lg text-center text-lg font-semibold hover:scale-105 transform transition-transform duration-300">HTML</div>
-    <div className="p-6 bg-gradient-to-r from-pink-400 to-purple-700 rounded-xl shadow-lg text-center text-lg font-semibold hover:scale-105 transform transition-transform duration-300">CSS</div>
-    <div className="p-6 bg-gradient-to-r from-pink-400 to-purple-700 rounded-xl shadow-lg text-center text-lg font-semibold hover:scale-105 transform transition-transform duration-300">JavaScript</div>
-    <div className="p-6 bg-gradient-to-r from-pink-400 to-purple-700 rounded-xl shadow-lg text-center text-lg font-semibold hover:scale-105 transform transition-transform duration-300">React</div>
-    <div className="p-6 bg-gradient-to-r from-pink-400 to-purple-700 rounded-xl shadow-lg text-center text-lg font-semibold hover:scale-105 transform transition-transform duration-300">Tailwind CSS</div>
-    <div className="p-6 bg-gradient-to-r from-pink-400 to-purple-700 rounded-xl shadow-lg text-center text-lg font-semibold hover:scale-105 transform transition-transform duration-300">TypeScript</div>
-    <div className="p-6 bg-gradient-to-r from-pink-400 to-purple-700 rounded-xl shadow-lg text-center text-lg font-semibold hover:scale-105 transform transition-transform duration-300">Git</div>
-    <div className="p-6 bg-gradient-to-r from-pink-400 to-purple-700 rounded-xl shadow-lg text-center text-lg font-semibold hover:scale-105 transform transition-transform duration-300">GitHub</div>
-    <div className="p-6 bg-gradient-to-r from-pink-400 to-purple-700 rounded-xl shadow-lg text-center text-lg font-semibold hover:scale-105 transform transition-transform duration-300">Bootstrap</div>
-  </div>
-</section>
-
-
-
-      <section id="projects" className="py-20 bg-gray-900">
-        <h2 className="text-center text-4xl font-bold text-yellow-400 mb-12">Projects</h2>
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-6">
-       
-          <div className="bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-400 rounded-2xl shadow-2xl p-6 hover:scale-[1.03] transition-all">
-            <h3 className="text-2xl font-bold text-yellow-300">AI Mock Interview Platform</h3>
-            <p className="mt-3 text-gray-100">AI-based platform that takes interviews, gives feedback, provides suggestions, and stores user responses.</p>
-            <div className="mt-4 flex gap-4">
-              <a className="text-yellow-300 underline" href="https://ai-interview-lwxx.onrender.com/ ">Live</a>
-              <a className="text-yellow-300 underline" href="#">Code</a>
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-r from-purple-700 via-pink-400 to-indigo-800 rounded-2xl shadow-2xl p-6 hover:scale-[1.03] transition-all">
-            <h3 className="text-2xl font-bold text-yellow-300">Engineering Hub. Website</h3>
-            <p className="mt-3 text-gray-100">Website for students with notes, videos, and resources organized semester-wise.</p>
-            <div className="mt-4 flex gap-4">
-              <a className="text-yellow-300 underline" href="https://engghub.onrender.com/ ">Live</a>
-              <a className="text-yellow-300 underline" href="#">Code</a>
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-r from-pink-400 via-indigo-700 to-purple-700 rounded-2xl shadow-2xl p-6 hover:scale-[1.03] transition-all">
-            <h3 className="text-2xl font-bold text-yellow-300">Hotel Website</h3>
-            <p className="mt-3 text-gray-100">React-based grocery UI to manage items, add products, and track cart state.</p>
-            <div className="mt-4 flex gap-4">
-              <a className="text-yellow-300 underline" href="https://food-lime-six.vercel.app/">Live</a>
-              <a className="text-yellow-300 underline" href="#">Code</a>
-            </div>
-          </div>
+          </a>
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="py-20 bg-gray-800">
-        <h2 className="text-center text-4xl font-bold text-yellow-400 mb-10">Contact Me</h2>
-        <div className="max-w-xl mx-auto p-6 bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-400 rounded-2xl shadow-2xl">
+      {/* ================= SKILLS ================= */}
+      <section id="skills" className="py-20 bg-[#0f172a]">
+        <h2 className="text-center text-4xl font-bold text-emerald-400 mb-12">
+          Skills
+        </h2>
+
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-8 px-6">
+          {[
+            { name: "HTML", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+            { name: "CSS", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+            { name: "JavaScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+            { name: "React", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+            { name: "Tailwind CSS", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" },
+            { name: "TypeScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+            { name: "Git", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+            { name: "GitHub", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+            { name: "Bootstrap", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
+          ].map((skill) => (
+            <div
+              key={skill.name}
+              className="flex flex-col items-center gap-4 p-6
+              border border-slate-800 rounded-2xl
+              hover:bg-[#0b0f14] font-semibold 
+              hover:shadow-[0_0_25px_rgba(52,211,153,0.2)]
+              transition bg-gradient-to-t from-emerald-500 to-cyan-500"
+            >
+              <img src={skill.img} alt={skill.name} className="w-16 h-16" />
+              <p className="font-semibold">{skill.name}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ================= PROJECTS ================= */}
+      <section id="projects" className="py-20 bg-[#0b0f14]">
+        <h2 className="text-center text-4xl font-bold text-emerald-400 mb-12">
+          Projects
+        </h2>
+
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-6">
+          {[
+            {
+              title: "AI Mock Interview Platform",
+              desc: "AI-powered interview system with feedback and analytics.",
+              link: "https://ai-interview-lwxx.onrender.com/",
+            },
+            {
+              title: "Engineering Hub",
+              desc: "Student resource platform with notes and videos.",
+              link: "https://engghub.onrender.com/",
+            },
+            {
+              title: "Hotel Website",
+              desc: "Responsive hotel website built with React.",
+              link: "https://food-lime-six.vercel.app/",
+            },
+          ].map((project) => (
+            <div
+              key={project.title}
+              className="bg-[#020617] border border-slate-800 rounded-2xl p-6
+              hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(34,211,238,0.15)]
+              transition"
+            >
+              <h3 className="text-2xl font-bold text-cyan-400">
+                {project.title}
+              </h3>
+              <p className="mt-3 text-slate-400">{project.desc}</p>
+              <a
+                href={project.link}
+                target="_blank"
+                className="inline-block mt-4 text-emerald-300 hover:text-emerald-400"
+              >
+                Live →
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ================= CONTACT ================= */}
+      <section id="contact" className="py-20 bg-[#0f172a]">
+        <h2 className="text-center text-4xl font-bold text-emerald-400 mb-10">
+          Contact Me
+        </h2>
+
+        <div className="max-w-xl mx-auto p-6 bg-[#020617] border border-slate-800 rounded-2xl">
           <form className="flex flex-col gap-4">
-            <input type="text" placeholder="Your Name" className="p-3 rounded-xl border-2 border-yellow-400 outline-yellow-400 bg-gray-900 text-white" />
-            <input type="email" placeholder="Your Email" className="p-3 rounded-xl border-2 border-yellow-400 outline-yellow-400 bg-gray-900 text-white" />
-            <textarea placeholder="Message" className="p-3 rounded-xl border-2 border-yellow-400 outline-yellow-400 bg-gray-900 text-white" rows="4"></textarea>
-            <button className="bg-yellow-400 text-gray-900 p-3 rounded-xl shadow hover:bg-yellow-500 transition-all font-semibold">Send Message</button>
+            <input className="p-3 bg-[#0b0f14] border border-slate-800 rounded-lg outline-emerald-400" placeholder="Your Name" />
+            <input className="p-3 bg-[#0b0f14] border border-slate-800 rounded-lg outline-emerald-400" placeholder="Your Email" />
+            <textarea rows="4" className="p-3 bg-[#0b0f14] border border-slate-800 rounded-lg outline-emerald-400" placeholder="Message"></textarea>
+            <button className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-black font-semibold p-3 rounded-lg hover:scale-105 transition">
+              Send Message
+            </button>
           </form>
         </div>
       </section>
 
-      <footer className="text-center py-6 text-gray-300 bg-gray-900 mt-10 border-t border-yellow-400">
-         2025 Diya Sharma | Frontend Developer
+      {/* ================= FOOTER ================= */}
+      <footer className="text-center py-6 text-slate-500 bg-[#0b0f14] border-t border-slate-800">
+        © 2025 Diya Sharma | Frontend Developer
       </footer>
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
