@@ -101,6 +101,18 @@ export default function Portfolio() {
     { name: "AWS", img: "https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" },
     { name: "Linux", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" },
 { name: "Ubuntu", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg" },
+{ name: "Node.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+
+{ name: "Express.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+
+{ name: "MongoDB", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+
+{ name: "Postman", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
+
+{ name: "Vercel", img: "https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg" },
+
+{ name: "Netlify", img: "https://www.vectorlogo.zone/logos/netlify/netlify-icon.svg" },
+
           ].map((skill) => (
             <div
               key={skill.name}
