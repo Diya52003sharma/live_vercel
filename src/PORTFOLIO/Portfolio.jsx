@@ -2,6 +2,9 @@ import React, { useState } from "react";
 
 export default function Portfolio() {
   const [open, setOpen] = useState(false);
+const [name, setName] = useState("");
+const [email, setEmail] = useState("");
+const [msg, setMsg] = useState("");
 
   return (
     <div className="font-sans bg-[#0b0f14] text-slate-200 scroll-smooth">
@@ -176,22 +179,61 @@ export default function Portfolio() {
       </section>
 
       {/* ================= CONTACT ================= */}
-      <section id="contact" className="py-20 bg-[#0f172a]">
-        <h2 className="text-center text-4xl font-bold text-emerald-400 mb-10">
-          Contact Me
-        </h2>
+     {/* ================= CONTACT ================= */}
+<section id="contact" className="py-20 bg-[#0f172a]">
+  <h2 className="text-center text-4xl font-bold text-emerald-400 mb-10">
+    Contact Me
+  </h2>
 
-        <div className="max-w-xl mx-auto p-6 bg-[#020617] border border-slate-800 rounded-2xl">
-          <form className="flex flex-col gap-4">
-            <input className="p-3 bg-[#0b0f14] border border-slate-800 rounded-lg outline-emerald-400" placeholder="Your Name" />
-            <input className="p-3 bg-[#0b0f14] border border-slate-800 rounded-lg outline-emerald-400" placeholder="Your Email" />
-            <textarea rows="4" className="p-3 bg-[#0b0f14] border border-slate-800 rounded-lg outline-emerald-400" placeholder="Message"></textarea>
-            <button className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-black font-semibold p-3 rounded-lg hover:scale-105 transition">
-              Send Message
-            </button>
-          </form>
-        </div>
-      </section>
+  <div className="max-w-xl mx-auto p-6 bg-[#020617] border border-slate-800 rounded-2xl">
+    <form
+      className="flex flex-col gap-4"
+      onSubmit={(e) => {
+        e.preventDefault();
+
+        const phoneNumber = "919878458281"; // ✅ apna number dalna (country code ke sath)
+        const text = `Hello! 👋\n\nName: ${name}\nEmail: ${email}\nMessage: ${msg}`;
+
+        window.open(
+          `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`,
+          "_blank"
+        );
+      }}
+    >
+      <input
+        className="p-3 bg-[#0b0f14] border border-slate-800 rounded-lg outline-emerald-400"
+        placeholder="Your Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        required
+      />
+
+      <input
+        className="p-3 bg-[#0b0f14] border border-slate-800 rounded-lg outline-emerald-400"
+        placeholder="Your Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+      />
+
+      <textarea
+        rows="4"
+        className="p-3 bg-[#0b0f14] border border-slate-800 rounded-lg outline-emerald-400"
+        placeholder="Message"
+        value={msg}
+        onChange={(e) => setMsg(e.target.value)}
+        required
+      ></textarea>
+
+      <button
+        type="submit"
+        className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-black font-semibold p-3 rounded-lg hover:scale-105 transition"
+      >
+        Send Message on WhatsApp
+      </button>
+    </form>
+  </div>
+</section>
 
       {/* ================= FOOTER ================= */}
       <footer className="text-center py-6 text-slate-500 bg-[#0b0f14] border-t border-slate-800">
