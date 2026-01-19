@@ -191,7 +191,7 @@ const [msg, setMsg] = useState("");
       onSubmit={(e) => {
         e.preventDefault();
 
-        const phoneNumber = "919878458281"; // ✅ apna number dalna (country code ke sath)
+        const phoneNumber = "919878458281"; // ✅ country code ke sath
         const text = `Hello! 👋\n\nName: ${name}\nEmail: ${email}\nMessage: ${msg}`;
 
         window.open(
@@ -201,6 +201,7 @@ const [msg, setMsg] = useState("");
       }}
     >
       <input
+        type="text"
         className="p-3 bg-[#0b0f14] border border-slate-800 rounded-lg outline-emerald-400"
         placeholder="Your Name"
         value={name}
@@ -209,6 +210,7 @@ const [msg, setMsg] = useState("");
       />
 
       <input
+        type="email"
         className="p-3 bg-[#0b0f14] border border-slate-800 rounded-lg outline-emerald-400"
         placeholder="Your Email"
         value={email}
@@ -223,7 +225,7 @@ const [msg, setMsg] = useState("");
         value={msg}
         onChange={(e) => setMsg(e.target.value)}
         required
-      ></textarea>
+      />
 
       <button
         type="submit"
