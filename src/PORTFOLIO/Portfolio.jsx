@@ -69,7 +69,7 @@ const [msg, setMsg] = useState("");
           </p>
 
           <a
-            href="/resume.pdf"
+            href="\Diya_Sharma_Resume_web developer.pdf"
             download
             target="_blank"
             className="inline-block mt-6 px-8 py-3 rounded-xl
