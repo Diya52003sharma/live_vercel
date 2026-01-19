@@ -28,7 +28,7 @@ export default function Portfolio() {
           <p className="text-xl mt-4 text-gray-600">Frontend Developer</p>
 
           <a
-            href="Diya_Sharma_Resume_web developer.pdf"
+            href="/Diya_Sharma_Resume_web developer.pdf"
             download
             className="inline-block mt-6 px-6 py-3 bg-black text-white font-semibold rounded-xl shadow hover:bg-gray-800 transition-colors"
           >
